@@ -9,8 +9,9 @@ class Pantry
   end
 
   def stock_check(ingredient)
-    @stock.values do |quantity|
-      @stock.values += @stock.values
+    values = []
+    values << @stock.values.each do |quantity|
+      @stock.values
     end.join.to_i
   end
 
@@ -20,5 +21,4 @@ class Pantry
     @stock = {ingredient => quantity}
 
   end
-
 end
