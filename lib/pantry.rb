@@ -9,18 +9,16 @@ class Pantry
   end
 
   def stock_check(ingredient)
-    @stock.values.join.to_i
-
+    @stock.values do |quantity|
+      @stock.values += @stock.values
+    end.join.to_i
   end
+
+#i know there needs to be some sort of map or inject iteration around here somewhere.
 
   def restock(ingredient, quantity)
     @stock = {ingredient => quantity}
-  end
 
-  # def restock(ingredient, quantity)
-  #   @stock_total.inject({}) do |key, value|
-  #     key[ingredient] = value.quantity
-  #   end
-  # end
+  end
 
 end
