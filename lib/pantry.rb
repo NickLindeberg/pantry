@@ -5,8 +5,10 @@ class Pantry
     @stock = {}
   end
 
-  def stock_check
-    stock_check = 0
+  def stock_check(ingredient)
+    @stock.find_all do |ingredient|
+      ingredient.key
+    end.count
   end
 
 end
